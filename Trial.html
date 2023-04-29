@@ -1,0 +1,513 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+	<title>My Website</title>
+	<link rel="stylesheet" href="Prc_4.css">
+</head>
+
+<body>
+	<header>
+		<center>
+			<h1>Welcome to My Website</h1>
+			<img src="https://static.wixstatic.com/media/3dc384_961e1afb538241dbb7a4a7e6df0f0931~mv2.jpg/v1/crop/x_78,y_0,w_579,h_736/fill/w_494,h_628,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/LOGO_MAIN.jpg"
+				width="90px" height="90px">
+		</center>
+	</header>
+	<hr>
+	<main>
+		<h2>K_N Bloggs</h2>
+		<img src="https://i.ibb.co/yV806QH/WEBSITE.jpg" width="500px" height="800px">
+		<p>We are a small company that specializes in Tech realted Bloggs on Finance, Technology, Movies and Games.
+			Our goal is to create modern and functional websites for our clients.</p>
+		<ul>
+
+			<li><a href="https://kcblogg.wixsite.com/home">
+					Our Website
+				</a></li>
+			<li><a href="https://www.youtube.com/@knbloggs">
+					Youtube
+				</a></li>
+			<li><a href="https://www.instagram.com/k.n_blogg/">
+					Instagram
+				</a></li>
+			<li><a href="https://t.me/kn_blogg">
+					Telegram
+				</a></li>
+
+		</ul>
+
+	</main>
+
+	<footer>
+		<center>
+			<p>&copy; 2023 My Website. All rights reserved.</p>
+		</center>
+	</footer>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Tech Store</title>
+	<!-- <link rel="stylesheet" href="BasicCSS.css"> -->
+	<script>
+		// Set the date and time of the sale end
+		var countDownDate = new Date("May 7, 2023 23:59:59").getTime();
+
+		// Update the countdown every second
+		var countdown = setInterval(function () {
+			var now = new Date().getTime();
+			var distance = countDownDate - now;
+
+			// Calculate the remaining days, hours, minutes, and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Display the remaining time in the countdown
+			document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+			// When the countdown ends, display a message
+			if (distance < 0) {
+				clearInterval(countdown);
+				document.getElementById("countdown").innerHTML = "EXPIRED";
+			}
+		}, 1000);
+
+		function addCloseHandler(bannerId, closeBtnId) {
+			const closeBtn = document.getElementById(closeBtnId);
+			const banner = document.getElementById(bannerId);
+
+			closeBtn.addEventListener('click', () => {
+				banner.style.display = 'none';
+			});
+
+		}
+		addCloseHandler('banner', 'close-btn');
+
+		// function openPopup(delay) {
+		// 	setTimeout(function () {
+		// 		const modal = document.getElementById('myModal');
+		// 		const span = document.getElementsByClassName('close')[0];
+
+		// 		modal.style.display = "block";
+
+		// 		span.onclick = function () {
+		// 			modal.style.display = "none";
+		// 		}
+
+		// 		window.onclick = function (event) {
+		// 			if (event.target == modal) {
+		// 				modal.style.display = "none";
+		// 			}
+		// 		}
+		// 	}, delay);
+		// }
+		// window.onload = function () {
+		// 	openPopup(5000); // opens the popup after 5 seconds
+		// };
+
+
+	</script>
+	<style>
+		/* Global Styles */
+
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		/* Header Styles */
+
+		/* header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 10px;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		.navi {
+			margin: 0;
+		}
+		 */
+
+		header {
+			background-color: royalblue;
+			color: #fff;
+			display: flex;
+			align-items: center;
+			padding: 10px;
+		}
+
+		header h1 {
+			font-size: 36px;
+			margin: 0;
+		}
+
+		header .navi {
+			margin-left: 600px;
+		}
+
+		header nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+		}
+
+		header nav li {
+			margin: 0 10px;
+		}
+
+		header nav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 18px;
+		}
+
+		header img {
+			/* box-shadow: 0 0 3px #000;
+			border: none;
+			border-radius: 10px; */
+			width: 319.767px;
+			height: 100px;
+			padding: 10px;
+		}
+
+		/* Hero Styles */
+
+		.hero {
+			background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaG5vbG9neXxlbnwwfHwwfHw%3D&w=1000&q=80');
+			background-size: cover;
+			background-position: center;
+			/* background-color: rgba(248, 247, 216, 0.7); */
+			height: 400px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 0 0 900px rgba(0, 0, 0, 0.9) inset;
+		}
+
+		.hero h2 {
+			font-size: 48px;
+			color: #fff;
+			margin-bottom: 20px;
+		}
+
+		.hero p {
+			font-size: 24px;
+			color: #fff;
+			text-align: center;
+			max-width: 800px;
+			margin-bottom: 30px;
+		}
+
+		.hero .btn {
+			display: inline-block;
+			background-color: lightcoral;
+			color: #212121;
+			padding: 10px 20px;
+			text-decoration: none;
+			font-size: 18px;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.hero .btn:hover {
+			background-color: #eaeaea;
+		}
+
+		.navi .btn {
+			display: block;
+			background-color: #212121;
+			color: #fff;
+			padding: 10px 20px;
+			text-decoration: none;
+			font-size: 18px;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+			text-align: center;
+		}
+
+		.navi .btn:hover {
+			background-color: #666;
+			color: #f9f9f9;
+			transition: ease-in;
+		}
+
+		/* Products Styles */
+
+		.products {
+			padding: 50px;
+			background-color: #f9f9f9;
+		}
+
+		.products h2 {
+			font-size: 36px;
+			text-align: center;
+			margin-top: auto;
+			margin-bottom: 30px;
+		}
+
+		.products ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			/* justify-content: center; */
+			overflow: scroll;
+		}
+
+		.products li {
+			margin: 0 10px;
+			max-width: 370px;
+			border: 2px solid #000;
+		}
+
+		.products li img {
+			display: flex;
+			justify-content: center;
+			width: 370px;
+			/* margin-left: 10px; */
+			height: 230px;
+			margin-bottom: 4px;
+		}
+
+		.products li h3 {
+			font-size: 24px;
+			margin-bottom: 10px;
+			display: flex;
+			justify-content: center;
+		}
+
+		.products li p {
+			font-size: 18px;
+			margin-bottom: 20px;
+			color: #666;
+			text-align: center;
+		}
+
+		.products li .btn {
+			display: block;
+			background-color: #212121;
+			color: #fff;
+			padding: 10px 20px;
+			text-decoration: none;
+			font-size: 18px;
+			/* border-radius: 5px; */
+			transition: background-color 0.3s ease;
+			text-align: center;
+			justify-content: center;
+		}
+
+		.products li .btn:hover {
+			background-color: gray;
+			color: gold;
+		}
+
+		/* Banner Designs */
+		/* #banner {
+			background-color: red;
+			color: #fff;
+			height: 180px;
+			padding: 50px 0;
+			text-align: center;
+		}
+
+		#banner h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+
+		#banner p {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		#countdown {
+			font-size: 36px;
+			font-weight: bold;
+		} */
+
+		#banner {
+			position: relative;
+			background-color: red;
+			color: #fff;
+			height: 120px;
+			padding: 20px 0;
+			text-align: center;
+		}
+
+		#banner h2 {
+			font-size: 22px;
+			margin-bottom: 20px;
+		}
+
+		#banner p {
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+
+		#countdown {
+			font-size: 15px;
+			font-weight: bold;
+		}
+
+		#close-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 24px;
+			color: #fff;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		/* POPUP Styling
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.modal-content {
+			background-color: #fefefe;
+			margin: 15% auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+			text-align: center;
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		} */
+
+
+		/* Footer Styles */
+
+		footer {
+			background-color: #212121;
+			color: #fff;
+			text-align: center;
+			padding: 20px;
+		}
+
+		footer p {
+			margin: 0;
+			font-size: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<img src="logo.jpg" alt="KNBLOGGS_LOGO">
+		<!-- <h1>K_N BLOGGS</h1> -->
+		<nav class="navi">
+			<ul>
+				<li><a href="#" class="btn">Home</a></li>
+				<li><a href="Products.html" class="btn">Products</a></li>
+				<li><a href="#" class="btn">About Us</a></li>
+				<li><a href="#" class="btn">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<h2>Welcome to Tech Store</h2>
+			<p>We offer a wide range of high-quality tech products at affordable prices.</p>
+			<a href="#" class="btn">Shop Now</a>
+		</section>
+
+		<!-- <section id="banner">
+			<div class="container">
+				<h2>Don't Miss Out on Our Sale!</h2>
+				<p>Get 20% off your purchase with the code SALE20. Offer ends in:</p>
+				<div id="countdown"></div>
+			</div>
+		</section> -->
+
+		<!-- <div id="myModal" class="modal" onclick="openPopup">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Visit our blog for more great content!</p>
+				<a href="https://yourblog.com">Click here</a>
+			</div>
+		</div> -->
+
+
+		<section id="banner">
+			<button id="close-btn" onclick="addCloseHandler('banner', 'close-btn')">X</button>
+			<div class="container">
+				<h2>Don't Miss Out on Our Sale!</h2>
+				<p>Get 20% off your purchase with the code SALE20. Offer ends in:</p>
+				<div id="countdown">Countdown</div>
+			</div>
+		</section>
+
+		<section class="products">
+			<h2>Featured Products</h2>
+			<ul>
+				<li>
+					<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80"
+						alt="Product 1">
+					<h3>APPLE LAPTOP</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut turpis id elit venenatis luctus.
+					</p>
+					<a href="#" class="btn">Product Description</a>
+				</li>
+				<li>
+					<img src="https://images.unsplash.com/photo-1651054008618-34348b76164c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+						alt="Product 2">
+					<h3>Samsung S22</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut turpis id elit venenatis luctus.
+					</p>
+					<a href="#" class="btn">Product Description</a>
+				</li>
+				<li>
+					<img src="https://i.ytimg.com/vi/dbDxsDD-KUs/maxresdefault.jpg" alt="Product 3">
+					<h3>Realme GT Neo5</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut turpis id elit venenatis luctus.
+					</p>
+					<a href="#" class="btn">Product Description</a>
+				</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 KN STORE. All rights reserved.</p>
+	</footer>
+</body>
+
+</html>
